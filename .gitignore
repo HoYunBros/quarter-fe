@@ -28,3 +28,4 @@ yarn-error.log*
 # storybook
 .storybook
 storybook-static
+build-storybook.log
