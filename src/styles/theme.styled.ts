@@ -1,28 +1,32 @@
 const lightColors = {
-  primary: '#950FFF',
-  white: '#FFFFFF',
+  primary: '#0FC5FF',
+  secondary: '#8B54FF',
+  gray_00: '#FFFFFF',
   gray_01: '#F5F5F5',
   gray_02: '#EEEEEE',
+  gray_03: '#666666',
   gray_04: '#666666',
-  gray_05: '#333333',
-  black: '#000000',
+  gray_05: '#292F3F',
 };
 
-const reversedLightColors = {
-  primary: '#950FFF',
-  black: '#FFFFFF',
-  gray_01: '#333333',
-  gray_02: '#666666',
+const darkColors = {
+  primary: '#0FC5FF',
+  secondary: '#8B54FF',
+  gray_00: '#292F3F',
+  gray_01: '#3B4359',
+  gray_02: '#32394B',
+  gray_03: '#9096A9',
   gray_04: '#EEEEEE',
-  gray_05: '#F5F5F5',
-  white: '#000000',
+  gray_05: '#FFFFFF',
 };
 
 const fontSizes = {
-  small: '12px',
-  medium: '14px',
-  large: '16px',
+  x_small: '12px',
+  small: '14px',
+  medium: '16px',
+  large: '18px',
   x_large: '24px',
+  xx_large: '30px',
 };
 
 const fontWeights = {
@@ -38,7 +42,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  colors: reversedLightColors,
+  colors: darkColors,
   fontSizes,
   fontWeights,
 };

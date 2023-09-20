@@ -15,7 +15,7 @@ const FootNavBar = () => {
         <S.NavItemTitle $isClicked={true}>홈</S.NavItemTitle>
       </S.NavItemWrapper>
       <S.NavItemWrapper>
-        <User fill={theme.colors.gray_04} />
+        <User fill={theme.colors.gray_05} />
         <S.NavItemTitle $isClicked={false}>마이</S.NavItemTitle>
       </S.NavItemWrapper>
     </S.Nav>

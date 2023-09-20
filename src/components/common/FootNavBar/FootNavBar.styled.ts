@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 8px;
   gap: 8px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.gray_00};
 `;
 
 export const NavItemWrapper = styled.button`
@@ -24,5 +24,5 @@ export const NavItemWrapper = styled.button`
 export const NavItemTitle = styled.p<{ $isClicked: boolean }>`
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: ${({ theme }) => theme.fontWeights.semi_bold};
-  color: ${({ theme, $isClicked }) => ($isClicked ? theme.colors.primary : theme.colors.gray_04)};
+  color: ${({ theme, $isClicked }) => ($isClicked ? theme.colors.primary : theme.colors.gray_03)};
 `;
