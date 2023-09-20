@@ -15,25 +15,25 @@ export const GlobalStyles = createGlobalStyle`
     #root {
       width: 100vw;
       height: 100vh;
-      /* background-color: #ffffff; */
+      background-color: ${({ theme }) => theme.lightColors.gray_01};
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     #root {
       width: 100vw;
       height: 100vh;
-      /* background-color: #ffffff; */
+      background-color: ${({ theme }) => theme.lightColors.gray_01};
     }
   }
   @media screen and (min-width: 1024px) {
     body {
-      /* background-color: #000000; */
+      background-color: ${({ theme }) => theme.lightColors.white};
     }
     #root {
       width: 390px;
       height: 100vh;
       margin: 0 auto;
-      /* background-color: #ffffff; */
+      background-color: ${({ theme }) => theme.lightColors.gray_01};
 
     }
   }
