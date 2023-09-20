@@ -1,0 +1,22 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icecream">
+<g id="Group 1">
+<g id="Group 2">
+<path id="Rectangle 30" d="M15 26.4C15 24.9088 16.2088 23.7 17.7 23.7C19.1912 23.7 20.4 24.9088 20.4 26.4C20.4 27.8912 19.1912 29.1 17.7 29.1C16.2088 29.1 15 27.8912 15 26.4Z" fill="#CA6BF7"/>
+<path id="Rectangle 33" d="M20.8092 27.1092C19.7548 26.0548 19.7548 24.3452 20.8092 23.2908C21.8636 22.2364 23.5732 22.2364 24.6276 23.2908C25.682 24.3452 25.682 26.0548 24.6276 27.1092C23.5732 28.1636 21.8636 28.1636 20.8092 27.1092Z" fill="#CA6BF7"/>
+<path id="Rectangle 34" d="M9.02758 27.1092C10.082 26.0548 10.082 24.3452 9.02758 23.2908C7.97316 22.2364 6.26362 22.2364 5.2092 23.2908C4.15479 24.3452 4.15479 26.0548 5.2092 27.1092C6.26362 28.1636 7.97316 28.1636 9.02758 27.1092Z" fill="#CA6BF7"/>
+<path id="Rectangle 32" d="M9.6001 26.4C9.6001 24.9088 10.8089 23.7 12.3001 23.7C13.7913 23.7 15.0001 24.9088 15.0001 26.4C15.0001 27.8912 13.7913 29.1 12.3001 29.1C10.8089 29.1 9.6001 27.8912 9.6001 26.4Z" fill="#CA6BF7"/>
+</g>
+<circle id="Ellipse 266" cx="15" cy="14.4" r="12" fill="url(#paint0_linear_26_1288)"/>
+</g>
+<rect id="Rectangle 35" x="10.2" y="5.70001" width="0.9" height="1.8" rx="0.45" transform="rotate(30 10.2 5.70001)" fill="#F3F4A9"/>
+<rect id="Rectangle 36" x="12.9" y="4.8364" width="0.9" height="1.8" rx="0.45" transform="rotate(-45 12.9 4.8364)" fill="#A9F4B5"/>
+<rect id="Rectangle 37" x="14.1588" y="7.20001" width="0.9" height="1.8" rx="0.45" transform="rotate(60 14.1588 7.20001)" fill="#B1E8FF"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_26_1288" x1="15" y1="16.2" x2="15" y2="26.4" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CA6BF7"/>
+<stop offset="1" stop-color="#EBC1FF"/>
+</linearGradient>
+</defs>
+</svg>
