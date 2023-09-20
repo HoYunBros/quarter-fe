@@ -8,6 +8,16 @@ const lightColors = {
   black: '#000000',
 };
 
+const reversedLightColors = {
+  primary: '#950FFF',
+  black: '#FFFFFF',
+  gray_01: '#333333',
+  gray_02: '#666666',
+  gray_04: '#EEEEEE',
+  gray_05: '#F5F5F5',
+  white: '#000000',
+};
+
 const fontSizes = {
   small: '12px',
   medium: '14px',
@@ -22,13 +32,13 @@ const fontWeights = {
 };
 
 export const lightTheme = {
-  lightColors,
+  colors: lightColors,
   fontSizes,
   fontWeights,
 };
 
-// export const darkTheme = {
-//   darkColors,
-//   fontSizes,
-//   fontWeights,
-// };
+export const darkTheme = {
+  colors: reversedLightColors,
+  fontSizes,
+  fontWeights,
+};
