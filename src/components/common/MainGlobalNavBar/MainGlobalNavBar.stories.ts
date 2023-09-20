@@ -10,8 +10,5 @@ export default meta;
 type Story = StoryObj<typeof MainGlobalNavBar>;
 
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'common',
-  },
+  args: {},
 };
