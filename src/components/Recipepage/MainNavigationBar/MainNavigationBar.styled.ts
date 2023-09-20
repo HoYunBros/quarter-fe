@@ -1,11 +1,5 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.header`
-  width: 100%;
-  height: 64px;
-  display: flex;
-`;
-
 export const Nav = styled.nav`
   width: 100%;
   height: 64px;
@@ -29,4 +23,5 @@ export const ModeContainer = styled.section`
   gap: 6px;
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.gray_02};
+  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); */
 `;

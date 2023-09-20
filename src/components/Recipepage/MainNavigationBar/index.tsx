@@ -9,18 +9,16 @@ import * as S from './MainNavigationBar.styled';
 
 const MainNavigationBar = () => {
   return (
-    <S.Container>
-      <S.Nav>
-        <S.LogoContainer>
-          <LogoCharacter />
-          <LogoTitle />
-        </S.LogoContainer>
-        <S.ModeContainer>
-          <LightMode />
-          <DarkMode />
-        </S.ModeContainer>
-      </S.Nav>
-    </S.Container>
+    <S.Nav>
+      <S.LogoContainer>
+        <LogoCharacter />
+        <LogoTitle />
+      </S.LogoContainer>
+      <S.ModeContainer>
+        <LightMode />
+        <DarkMode />
+      </S.ModeContainer>
+    </S.Nav>
   );
 };
 

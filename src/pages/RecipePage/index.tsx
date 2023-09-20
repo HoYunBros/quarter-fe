@@ -1,10 +1,15 @@
 import React from 'react';
 
+import * as S from './RecipePage.styled';
+import MainNavigationBar from '../../components/RecipePage/MainNavigationBar';
+
 const RecipePage = () => {
   return (
-    <section>
-      <h1>Recipe Page</h1>
-    </section>
+    <S.Container>
+      <S.Header>
+        <MainNavigationBar />
+      </S.Header>
+    </S.Container>
   );
 };
 
