@@ -1,6 +1,6 @@
 <svg width="388" height="508" viewBox="0 0 388 508" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_80_1480)">
-<rect x="24" y="12" width="340" height="460" rx="24" fill="url(#paint0_linear_80_1320)"/>
+<rect x="24" y="12" width="340" height="460" rx="24" fill="url(#paint0_linear_80_1750)"/>
 </g>
 <defs>
 <filter id="filter0_d_80_1480" x="0" y="0" width="388" height="508" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -12,9 +12,9 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_80_1480"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_80_1480" result="shape"/>
 </filter>
-<linearGradient id="paint0_linear_80_1320" x1="194" y1="12" x2="194" y2="472" gradientUnits="userSpaceOnUse">
-<stop stop-color="#5f2701"/>
-<stop offset="0.655982" stop-color="#F3DA9A"/>
+<linearGradient id="paint0_linear_80_1750" x1="194" y1="12" x2="194" y2="472" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7353ea"/>
+<stop offset="0.655982" stop-color="#efeff9"/>
 </linearGradient>
 </defs>
 </svg>
