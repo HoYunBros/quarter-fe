@@ -5,13 +5,14 @@ import SubGlobalNavBar from '../../components/SubGlobalNavBar';
 import Text from '../../components/Text';
 import SizeBlock from '../../components/SizeBlock';
 import FootButton from '../../components/FootButton';
+import { PROGRESS_BAR_WIDTH } from '../../constants';
 import * as S from './SizePickPage.styled';
 
 const SizePickPage = () => {
   return (
     <S.Container>
       <S.Header>
-        <SubGlobalNavBar backTo={routes.home} />
+        <SubGlobalNavBar backTo={routes.home} progressWidth={PROGRESS_BAR_WIDTH.START} />
       </S.Header>
       <S.Main>
         <Text size="large">어떤 사이즈를 드시나요?</Text>
@@ -20,7 +21,7 @@ const SizePickPage = () => {
           <S.SizesWrapper>
             <S.SizeWrapper>
               <SizeBlock size="single" />
-              <Text size="small">싱글 레귤러</Text>
+              <Text size="small">싱글레귤러</Text>
             </S.SizeWrapper>
             <S.SizeWrapper>
               <SizeBlock size="single" />

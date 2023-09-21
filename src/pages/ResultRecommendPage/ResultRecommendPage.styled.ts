@@ -30,32 +30,3 @@ export const Footer = styled.footer`
   height: fit-content;
   padding: 0 16px 32px 16px;
 `;
-
-export const SizePickContainer = styled.section`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 8px;
-`;
-
-export const SizesWrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 14px;
-`;
-
-export const SizeWrapper = styled.div`
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-`;

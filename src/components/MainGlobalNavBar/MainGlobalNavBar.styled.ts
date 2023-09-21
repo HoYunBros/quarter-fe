@@ -25,3 +25,17 @@ export const ModeContainer = styled.section`
   background-color: ${({ theme }) => theme.colors.gray_02};
   /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); */
 `;
+
+export const ModeButton = styled.button<{ $isActive: boolean }>`
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border-radius: 50%;
+  background-color: ${({ theme, $isActive }) =>
+    $isActive ? theme.colors.gray_00 : theme.colors.gray_02};
+  transition: all 0.35s ease-in-out;
+  cursor: pointer;
+`;
