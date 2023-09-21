@@ -8,25 +8,33 @@ import IngredientSelectPage from '../pages/IngredientSelectPage';
 import ResultRecommendPage from '../pages/ResultRecommendPage';
 import ErrorPage from '../pages/ErrorPage';
 
+export const routes = {
+  home: '/',
+  auth: '/auth',
+  sizePick: '/sizePick',
+  ingredientSelect: '/ingredientSelect',
+  resultRecommend: '/resultRecommend',
+};
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: routes.home,
     element: <HomePage />,
   },
   {
-    path: '/auth',
+    path: routes.auth,
     element: <AuthPage />,
   },
   {
-    path: '/sizePick',
+    path: routes.sizePick,
     element: <SizePickPage />,
   },
   {
-    path: '/ingredientSelect',
+    path: routes.ingredientSelect,
     element: <IngredientSelectPage />,
   },
   {
-    path: '/resultRecommend',
+    path: routes.resultRecommend,
     element: <ResultRecommendPage />,
   },
   {

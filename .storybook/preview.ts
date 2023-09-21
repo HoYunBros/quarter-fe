@@ -1,12 +1,7 @@
 import type { Preview } from '@storybook/react';
-
 import { ThemeProvider } from 'styled-components';
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 
-/* TODO: update import for your custom theme configurations */
-// import { lightTheme, darkTheme } from '../path/to/themes';
-
-/* TODO: replace with your own global styles, or remove */
 import { GlobalStyles } from '../src/styles/GlobalStyles.styled';
 import { lightTheme, darkTheme } from '../src/styles/theme.styled';
 
