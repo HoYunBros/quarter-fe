@@ -6,35 +6,35 @@ export const GlobalStyles = createGlobalStyle`
   * {
     border: none;  
     box-sizing: border-box;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     }
   a {
     text-decoration: none;
     color: inherit;
   }
   @media screen and (max-width: 767px) {
-    #root {
+    #root, #storybook-root {
       width: 100vw;
       height: 100vh;
-      /* background-color: #ffffff; */
+      background-color: ${({ theme }) => theme.colors.gray_00};
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    #root {
+    #root, #storybook-root {
       width: 100vw;
       height: 100vh;
-      /* background-color: #ffffff; */
+      background-color: ${({ theme }) => theme.colors.gray_00};
     }
   }
   @media screen and (min-width: 1024px) {
     body {
-      /* background-color: #000000; */
+      background-color: ${({ theme }) => theme.colors.gray_01};
     }
-    #root {
+    #root, #storybook-root {
       width: 390px;
       height: 100vh;
       margin: 0 auto;
-      /* background-color: #ffffff; */
-
+      background-color: ${({ theme }) => theme.colors.gray_00};
     }
   }
 `;
