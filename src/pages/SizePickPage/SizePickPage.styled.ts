@@ -21,7 +21,7 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 16px 20px;
+  padding: 32px 20px;
   gap: 24px;
 `;
 
