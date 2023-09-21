@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
 
-import { ReactComponent as Home } from '../../../assets/icons/common/home.svg';
-import { ReactComponent as User } from '../../../assets/icons/common/user.svg';
+import { ReactComponent as User } from '../../assets/icons/common/user.svg';
+import { ReactComponent as Home } from '../../assets/icons/common/home.svg';
 import * as S from './FootNavBar.styled';
 
 const FootNavBar = () => {
