@@ -7,9 +7,10 @@ import * as S from './SubGlobalNavBar.styled';
 
 type Props = {
   backTo: string;
+  progressWidth: string;
 };
 
-const SubGlobalNavBar = ({ backTo }: Props) => {
+const SubGlobalNavBar = ({ backTo, progressWidth }: Props) => {
   return (
     <>
       <S.Nav>
@@ -24,7 +25,7 @@ const SubGlobalNavBar = ({ backTo }: Props) => {
       </S.Nav>
       <S.ProgressBarContainer>
         <S.TotalProgressBar />
-        <S.ProgressBar $progressWidth="33%" />
+        <S.ProgressBar $progressWidth={progressWidth} />
       </S.ProgressBarContainer>
     </>
   );
