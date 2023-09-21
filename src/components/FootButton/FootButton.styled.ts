@@ -9,7 +9,7 @@ export const Button = styled(Link)`
   align-items: center;
   border-radius: 8px;
   font-size: ${({ theme }) => theme.fontSizes.medium};
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
 `;

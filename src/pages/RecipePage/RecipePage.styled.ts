@@ -31,11 +31,13 @@ export const LinkButton = styled(Link)`
   height: 68px;
   display: flex;
   justify-content: flex-start;
+  line-height: 24px;
   padding: 24px 20px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.gray_01};
   font-size: ${({ theme }) => theme.fontSizes.large};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.gray_05};
 `;
 
 export const Footer = styled.footer`
