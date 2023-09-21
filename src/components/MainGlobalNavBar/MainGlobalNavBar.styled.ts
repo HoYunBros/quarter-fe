@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.gary_00};
+  background-color: ${({ theme }) => theme.colors.gray_00};
 `;
 
 export const LogoContainer = styled.section`
