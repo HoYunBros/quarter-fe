@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { routes } from '../../router';
+import MainGlobalNavBar from '../../components/MainGlobalNavBar';
+import FootNavBar from '../../components/FootNavBar';
+import { ReactComponent as Card } from '../../assets/icons/cardColor/card1.svg';
 import * as S from './RecipePage.styled';
-import MainGlobalNavBar from '../../components/common/MainGlobalNavBar';
-import FootNavBar from '../../components/common/FootNavBar';
 
 const RecipePage = () => {
   return (
@@ -10,7 +12,10 @@ const RecipePage = () => {
       <S.Header>
         <MainGlobalNavBar />
       </S.Header>
-      <S.Main>메인 컨텐츠</S.Main>
+      <S.Main>
+        <Card />
+        <S.LinkButton to={routes.sizePick}>꿀조합 찾기</S.LinkButton>
+      </S.Main>
       <S.Footer>
         <FootNavBar />
       </S.Footer>

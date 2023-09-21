@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   width: 100%;
@@ -23,6 +24,18 @@ export const Main = styled.main`
   align-items: center;
   padding: 16px 0;
   gap: 24px;
+`;
+
+export const LinkButton = styled(Link)`
+  width: 340px;
+  height: 68px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 24px 20px;
+  border-radius: 16px;
+  background-color: ${({ theme }) => theme.colors.gray_01};
+  font-size: ${({ theme }) => theme.fontSizes.large};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
 
 export const Footer = styled.footer`
