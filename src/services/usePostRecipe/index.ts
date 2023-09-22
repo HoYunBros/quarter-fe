@@ -11,11 +11,12 @@ type UserItem = {
 
 export const usePostRecipe = () => {
   const navigate = useNavigate();
-  return useMutation((userItem: UserItem) => axiosFetch.post('/recipes', userItem), {
+  return useMutation(async (userItem: UserItem) => await axiosFetch.post('/recipes', userItem), {
     onSuccess: data => {
       alert('레시피가 추가되었습니다.');
-      console.log(navigate);
-      navigate(`${routes.resultRecommend}/${data.data.id}`);
+      console.log(data);
+      const { body } = data.data;
+      navigate(`${routes.resultRecommend}/${body.id}`);
     },
     onError: () => {
       alert('레시피 추가에 실패했습니다.');
