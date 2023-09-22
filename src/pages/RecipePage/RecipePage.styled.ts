@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import card_1 from '../../assets/icons/cardColor/card1.png';
 export const Container = styled.section`
   width: 100%;
   height: 100%;
@@ -43,4 +43,22 @@ export const LinkButton = styled(Link)`
 export const Footer = styled.footer`
   width: 100%;
   height: fit-content;
+`;
+
+export const CarouselContainer = styled.section`
+  /* 내부의 컴포넌트들일 carousel로 담기 */
+  width: 388px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: initial;
+  align-items: center;
+  overflow: hidden;
+`;
+
+export const Card = styled.div`
+  width: 388px;
+  height: 508px;
+  background-image: url(${card_1});
 `;
