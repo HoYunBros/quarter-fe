@@ -64,4 +64,5 @@ export const IngredientName = styled.span`
   height: fit-content;
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: ${({ theme }) => theme.fontWeights.normal};
+  color: ${({ theme }) => theme.colors.gray_05};
 `;
