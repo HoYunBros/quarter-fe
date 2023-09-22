@@ -1,7 +1,6 @@
 import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const Button = styled(Link)`
+export const Button = styled.button<{ $disabled: boolean }>`
   width: 100%;
   height: 48px;
   display: flex;
@@ -11,5 +10,6 @@ export const Button = styled(Link)`
   font-size: ${({ theme }) => theme.fontSizes.medium};
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.primary};
-  cursor: pointer;
+  opacity: ${({ $disabled }) => ($disabled ? 0.5 : 1)};
+  cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
 `;

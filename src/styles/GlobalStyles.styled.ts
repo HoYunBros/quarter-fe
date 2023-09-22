@@ -12,6 +12,14 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+  button {
+    /* 버튼 크기 초기화 */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
   @media screen and (max-width: 767px) {
     #root, #storybook-root {
       width: 100vw;

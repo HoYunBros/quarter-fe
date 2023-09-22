@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import card_1 from '../../assets/icons/cardColor/card1.png';
+
 export const Container = styled.section`
   width: 100%;
   height: 100%;
@@ -22,7 +23,7 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 16px 0;
+  padding: 0 16px 16vh 16px;
   gap: 24px;
 `;
 

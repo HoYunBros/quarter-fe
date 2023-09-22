@@ -9,7 +9,6 @@ import { useMode, useModeChange } from '../../contexts/ModeContext';
 import * as S from './MainGlobalNavBar.styled';
 
 const MainNavigationBar = () => {
-  // TODO: 라이트/다크 모드 전환 기능 구현
   const theme = useTheme();
   const mode = useMode();
   const handleModeChange = useModeChange();
@@ -26,7 +25,7 @@ const MainNavigationBar = () => {
             handleModeChange('light');
           }}
         >
-          <LightMode fill={theme.colors.black} />
+          <LightMode fill={theme.colors.gray_05} />
         </S.ModeButton>
         <S.ModeButton
           $isActive={mode === 'dark'}
@@ -34,7 +33,7 @@ const MainNavigationBar = () => {
             handleModeChange('dark');
           }}
         >
-          <DarkMode fill={theme.colors.white} />
+          <DarkMode fill={theme.colors.black} />
         </S.ModeButton>
       </S.ModeContainer>
     </S.Nav>

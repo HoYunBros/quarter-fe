@@ -4,11 +4,22 @@ import * as S from './FootButton.styled';
 
 type Props = {
   children: React.ReactNode;
-  nextTo: string;
+  onClick: () => void;
+  disabled?: boolean;
 };
 
-const FootButton = ({ children, nextTo }: Props) => {
-  return <S.Button to={nextTo}>{children}</S.Button>;
+const FootButton = ({ children, onClick, disabled = true }: Props) => {
+  return (
+    <S.Button
+      onClick={() => {
+        onClick();
+      }}
+      disabled={disabled}
+      $disabled={disabled}
+    >
+      {children}
+    </S.Button>
+  );
 };
 
 export default FootButton;
