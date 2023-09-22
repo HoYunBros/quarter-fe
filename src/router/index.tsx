@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <IngredientSelectPage />,
   },
   {
-    path: routes.resultRecommend,
+    path: `${routes.resultRecommend}/:id`,
     element: <ResultRecommendPage />,
   },
   {
