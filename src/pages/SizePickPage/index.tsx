@@ -18,8 +18,7 @@ const SizePickPage = () => {
     changeSize({ id: -1, value: -1 });
   };
   const navigate = useNavigate();
-  const { data, isLoading, isError } = useGetSizes();
-  console.log(data, isLoading, isError);
+  const { data, isLoading } = useGetSizes();
   return (
     <>
       {isLoading && <div>Loading...</div>}
@@ -33,7 +32,7 @@ const SizePickPage = () => {
             <S.SizePickContainer>
               <Text size="medium">1가지 맛</Text>
               <S.SizesWrapper>
-                {data?.sizes.slice(0, 2).map(_size => (
+                {data?.sizes?.slice(0, 2).map(_size => (
                   <S.SizeWrapperButton
                     key={_size.id}
                     onClick={() => {
@@ -55,7 +54,7 @@ const SizePickPage = () => {
             <S.SizePickContainer>
               <Text size="medium">2가지 맛</Text>
               <S.SizesWrapper>
-                {data?.sizes.slice(2, 4).map(_size => (
+                {data?.sizes?.slice(2, 4).map(_size => (
                   <S.SizeWrapperButton
                     key={_size.id}
                     onClick={() => {
@@ -77,7 +76,7 @@ const SizePickPage = () => {
             <S.SizePickContainer>
               <Text size="medium">3가지 맛 이상</Text>
               <S.SizesWrapper>
-                {data?.sizes.slice(4, 8).map(_size => (
+                {data?.sizes?.slice(4, 8).map(_size => (
                   <S.SizeWrapperButton
                     key={_size.id}
                     onClick={() => {

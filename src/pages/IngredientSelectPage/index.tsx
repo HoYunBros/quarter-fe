@@ -12,15 +12,11 @@ import { usePostRecipe } from '../../services/usePostRecipe';
 import { useUserItem, useChangeIngredientIds } from '../../contexts/UserItemContext';
 
 const IngredientSelectPage = () => {
-  const { data, isLoading, isError } = useGetIngredients();
-  console.info(data, isLoading, isError);
+  const { data, isLoading } = useGetIngredients();
   const { size, ingredientIds } = useUserItem();
   const changeIngredientIds = useChangeIngredientIds();
   const mutation = usePostRecipe();
 
-  console.log(size);
-  console.log(ingredientIds);
-  console.log(mutation);
   return (
     <>
       {isLoading && <div>Loading...</div>}
