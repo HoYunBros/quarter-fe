@@ -1,14 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { routes } from '../../router';
 import SubGlobalNavBar from '../../components/SubGlobalNavBar';
 import Text from '../../components/Text';
-import SizeBlock from '../../components/SizeBlock';
 import FootButton from '../../components/FootButton';
 import { PROGRESS_BAR_WIDTH } from '../../constants';
+import { useUserItem, useChangeSize } from '../../contexts/UserItemContext';
 import * as S from './SizePickPage.styled';
 
+import { useGetSizes } from '../../services/useGetSizes';
+
 const SizePickPage = () => {
+  const { size } = useUserItem();
+  const changeSize = useChangeSize();
+  const initSize = () => {
+    changeSize({ id: -1, value: -1 });
+  };
+  const navigate = useNavigate();
+  const { data, isLoading, isError } = useGetSizes();
+  console.log(data, isLoading, isError);
   return (
     <S.Container>
       <S.Header>
@@ -19,53 +30,79 @@ const SizePickPage = () => {
         <S.SizePickContainer>
           <Text size="medium">1가지 맛</Text>
           <S.SizesWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="single" />
-              <Text size="small">싱글레귤러</Text>
-            </S.SizeWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="single" />
-              <Text size="small">싱글킹</Text>
-            </S.SizeWrapper>
+            {data?.sizes.slice(0, 2).map(_size => (
+              <S.SizeWrapperButton
+                key={_size.id}
+                onClick={() => {
+                  if (size.id === _size.id) {
+                    initSize();
+                  } else {
+                    changeSize({ id: _size.id, value: _size.value });
+                  }
+                }}
+              >
+                <S.SizeBlockWrapper $isClicked={size.id === _size.id}>
+                  <S.SizeImage src={_size.imageUrl} />
+                </S.SizeBlockWrapper>
+                <Text size="small">{_size.name}</Text>
+              </S.SizeWrapperButton>
+            ))}
           </S.SizesWrapper>
         </S.SizePickContainer>
         <S.SizePickContainer>
           <Text size="medium">2가지 맛</Text>
           <S.SizesWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="double" />
-              <Text size="small">더블주니어</Text>
-            </S.SizeWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="double" />
-              <Text size="small">더블레귤러</Text>
-            </S.SizeWrapper>
+            {data?.sizes.slice(2, 4).map(_size => (
+              <S.SizeWrapperButton
+                key={_size.id}
+                onClick={() => {
+                  if (size.id === _size.id) {
+                    initSize();
+                  } else {
+                    changeSize({ id: _size.id, value: _size.value });
+                  }
+                }}
+              >
+                <S.SizeBlockWrapper $isClicked={size.id === _size.id}>
+                  <S.SizeImage src={_size.imageUrl} />
+                </S.SizeBlockWrapper>
+                <Text size="small">{_size.name}</Text>
+              </S.SizeWrapperButton>
+            ))}
           </S.SizesWrapper>
         </S.SizePickContainer>
         <S.SizePickContainer>
           <Text size="medium">3가지 맛 이상</Text>
           <S.SizesWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="pint" />
-              <Text size="small">파인트</Text>
-            </S.SizeWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="quart" />
-              <Text size="small">쿼터</Text>
-            </S.SizeWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="family" />
-              <Text size="small">패밀리</Text>
-            </S.SizeWrapper>
-            <S.SizeWrapper>
-              <SizeBlock size="half-gallon" />
-              <Text size="small">하프갤런</Text>
-            </S.SizeWrapper>
+            {data?.sizes.slice(4, 8).map(_size => (
+              <S.SizeWrapperButton
+                key={_size.id}
+                onClick={() => {
+                  if (size.id === _size.id) {
+                    initSize();
+                  } else {
+                    changeSize({ id: _size.id, value: _size.value });
+                  }
+                }}
+              >
+                <S.SizeBlockWrapper $isClicked={size.id === _size.id}>
+                  <S.SizeImage src={_size.imageUrl} />
+                </S.SizeBlockWrapper>
+                <Text size="small">{_size.name}</Text>
+              </S.SizeWrapperButton>
+            ))}
           </S.SizesWrapper>
         </S.SizePickContainer>
       </S.Main>
       <S.Footer>
-        <FootButton nextTo={routes.ingredientSelect}>다음</FootButton>
+        <FootButton
+          onClick={() => {
+            navigate(routes.ingredientSelect);
+          }}
+          disabled={size.id === -1}
+        >
+          다음
+        </FootButton>
       </S.Footer>
     </S.Container>
   );

@@ -50,7 +50,7 @@ export const SizesWrapper = styled.div`
   gap: 14px;
 `;
 
-export const SizeWrapper = styled.div`
+export const SizeWrapperButton = styled.button`
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -58,4 +58,23 @@ export const SizeWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+`;
+
+export const SizeBlockWrapper = styled.div<{ $isClicked: boolean }>`
+  width: 74px;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.gray_01};
+  border: ${({ theme, $isClicked }) =>
+    $isClicked ? `2px solid ${theme.colors.secondary}` : `none`};
+  border-radius: 16px;
+`;
+
+export const SizeImage = styled.img`
+  width: fit-content;
+  height: fit-content;
+  object-fit: contain;
 `;
