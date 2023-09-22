@@ -42,7 +42,7 @@ export const IngredientsContainer = styled.section`
   gap: 10px;
 `;
 
-export const IngredientWrapper = styled.div`
+export const IngredientWrapper = styled.button`
   width: 62px;
   height: 86px;
   display: flex;
@@ -50,13 +50,16 @@ export const IngredientWrapper = styled.div`
   justify-content: flex-start;
   gap: 10px;
   align-items: center;
+  cursor: pointer;
 `;
 
-export const IngredientImage = styled.img`
+export const IngredientImage = styled.img<{ $isClicked: boolean }>`
   width: fit-content;
   height: fit-content;
   border-radius: 50%;
   object-fit: cover;
+  border: ${({ theme, $isClicked }) =>
+    `2px solid ${$isClicked ? theme.colors.secondary : theme.colors.gray_00}`};
 `;
 
 export const IngredientName = styled.span`
