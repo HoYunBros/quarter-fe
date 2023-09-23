@@ -20,10 +20,14 @@ export const changeSizeContext = createContext(({ id, value }: Size) => {
 export const changeIngredientIdsContext = createContext((ingredientIds: number[]) => {
   console.error(`changeIngredientIdsContext를 벗어났습니다. ingredientIds: ${ingredientIds}`);
 });
+export const initUserItemContext = createContext(() => {
+  console.error('initUserItemContext를 벗어났습니다.');
+});
 
 export const useUserItem = () => useContext(userItemContext);
 export const useChangeSize = () => useContext(changeSizeContext);
 export const useChangeIngredientIds = () => useContext(changeIngredientIdsContext);
+export const useInitUserItem = () => useContext(initUserItemContext);
 
 type Props = {
   children: React.ReactNode;
@@ -49,11 +53,19 @@ export const UserItemProvider = ({ children }: Props) => {
     });
   };
 
+  const initUserItem = () => {
+    setUserItem({
+      size: { id: -1, value: -1 },
+      ingredientIds: [],
+    });
+  };
   return (
     <userItemContext.Provider value={userItem}>
       <changeSizeContext.Provider value={changeSize}>
         <changeIngredientIdsContext.Provider value={changeIngredientIds}>
-          {children}
+          <initUserItemContext.Provider value={initUserItem}>
+            {children}
+          </initUserItemContext.Provider>
         </changeIngredientIdsContext.Provider>
       </changeSizeContext.Provider>
     </userItemContext.Provider>
