@@ -6,20 +6,24 @@ import router from './router';
 import { UserItemProvider } from './contexts/UserItemContext';
 import ModeThemeProvider from './contexts/ModeContext';
 import { GlobalStyles } from './styles/GlobalStyles.styled';
+import { ErrorBoundary } from './pages/ErrorPage/ErrorBoundary';
+import ErrorPage from './pages/ErrorPage';
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <>
-      <ModeThemeProvider>
-        <GlobalStyles />
-        <QueryClientProvider client={queryClient}>
-          <UserItemProvider>
-            <RouterProvider router={router} />
-          </UserItemProvider>
-        </QueryClientProvider>
-      </ModeThemeProvider>
+      <ErrorBoundary fallback={<ErrorPage />}>
+        <ModeThemeProvider>
+          <GlobalStyles />
+          <QueryClientProvider client={queryClient}>
+            <UserItemProvider>
+              <RouterProvider router={router} />
+            </UserItemProvider>
+          </QueryClientProvider>
+        </ModeThemeProvider>
+      </ErrorBoundary>
     </>
   );
 };

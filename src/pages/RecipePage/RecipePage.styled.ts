@@ -1,6 +1,5 @@
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
-import card_1 from '../../assets/icons/cardColor/card1.png';
 
 export const Container = styled.section`
   width: 100%;
@@ -24,6 +23,7 @@ export const Main = styled.main`
   justify-content: flex-start;
   align-items: center;
   padding: 0 16px 16vh 16px;
+
   gap: 24px;
 `;
 
@@ -47,8 +47,7 @@ export const Footer = styled.footer`
 `;
 
 export const CarouselContainer = styled.section`
-  /* 내부의 컴포넌트들일 carousel로 담기 */
-  width: 388px;
+  width: 400px;
   height: 600px;
   display: flex;
   flex-direction: row;
@@ -56,10 +55,4 @@ export const CarouselContainer = styled.section`
   flex-wrap: initial;
   align-items: center;
   overflow: hidden;
-`;
-
-export const Card = styled.div`
-  width: 388px;
-  height: 508px;
-  background-image: url(${card_1});
 `;

@@ -13,8 +13,6 @@ export const usePostRecipe = () => {
   const navigate = useNavigate();
   return useMutation(async (userItem: UserItem) => await axiosFetch.post('/recipes', userItem), {
     onSuccess: data => {
-      alert('레시피가 추가되었습니다.');
-      console.log(data);
       const { body } = data.data;
       navigate(`${routes.resultRecommend}/${body.id}`);
     },

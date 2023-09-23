@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTheme } from 'styled-components';
 
 import { isMobile } from '../../utils/isMobile';
@@ -8,19 +8,35 @@ import * as S from './Carousel.styled';
 
 type CarouselProps = {
   children: React.ReactNode;
+  currentSlideIndex: number;
+  changeSlide: (index: number) => void;
 };
 
 type SlideProps = {
   children: React.ReactNode;
+  isCurrentSlide?: boolean;
 };
 
-const Carousel = ({ children }: CarouselProps) => {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+const Carousel = ({ children, currentSlideIndex, changeSlide }: CarouselProps) => {
   const touchStartPositionX = useRef(0);
   const touchEndPositionX = useRef(0);
   const handleSlideClick = (index: number) => {
-    setCurrentSlideIndex(index);
+    changeSlide(index);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (currentSlideIndex >= React.Children.count(children) - 1) {
+        changeSlide(0);
+        return;
+      }
+      changeSlide(currentSlideIndex + 1);
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [currentSlideIndex, children]);
+
   const theme = useTheme();
   return (
     <S.CarouselContainer>
@@ -81,8 +97,8 @@ const Carousel = ({ children }: CarouselProps) => {
   );
 };
 
-const Slide = ({ children }: SlideProps) => {
-  return <S.SlideWrapper>{children}</S.SlideWrapper>;
+const Slide = ({ children, isCurrentSlide }: SlideProps) => {
+  return <S.SlideWrapper $isCurrentSlide={isCurrentSlide}>{children}</S.SlideWrapper>;
 };
 
 Carousel.Slide = Slide;
