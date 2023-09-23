@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { routes } from '../../router';
 import SubGlobalNavBar from '../../components/SubGlobalNavBar';
@@ -17,6 +18,22 @@ const IngredientSelectPage = () => {
   const changeIngredientIds = useChangeIngredientIds();
   const mutation = usePostRecipe();
 
+  const allFlavorIdList = ingredientIds
+    .map(id => {
+      const flavorIdList = data?.ingredients?.find(ingredient => ingredient.id === id)
+        ?.flavorIdList;
+      return flavorIdList;
+    })
+    .flat();
+  const flavorIdList = allFlavorIdList.filter(
+    (item, index) => allFlavorIdList.indexOf(item) === index,
+  );
+  const isAbleToRecommend = flavorIdList.length >= size.value;
+  console.log(flavorIdList);
+  const navigate = useNavigate();
+  if (size.id === -1) {
+    navigate(routes.sizePick);
+  }
   return (
     <>
       {isLoading && <div>Loading...</div>}
@@ -50,17 +67,20 @@ const IngredientSelectPage = () => {
             </S.IngredientsContainer>
           </S.Main>
           <S.Footer>
+            {isAbleToRecommend || ingredientIds.length === 0 || (
+              <Text size="small">재료를 조금 더 골라볼까요?</Text>
+            )}
             <FootButton
               onClick={() => {
                 mutation.mutate({
-                  size: size.value,
+                  sizeId: size.id,
                   ingredientIds,
                 });
                 // if (mutation.isSuccess) {
                 //   navigate(`${routes.resultRecommend}`);
                 // }
               }}
-              disabled={ingredientIds.length === 0}
+              disabled={!isAbleToRecommend}
             >
               결과보기
             </FootButton>
