@@ -36,6 +36,6 @@ export const ModeButton = styled.button<{ $isActive: boolean }>`
   border-radius: 50%;
   background-color: ${({ theme, $isActive }) =>
     $isActive ? theme.colors.white : theme.colors.gray_02};
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   cursor: pointer;
 `;
