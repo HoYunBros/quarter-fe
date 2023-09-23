@@ -5,7 +5,7 @@ import { axiosFetch } from '../../api/apiClient';
 import { routes } from '../../router';
 
 type UserItem = {
-  size: number;
+  sizeId: number;
   ingredientIds: number[];
 };
 

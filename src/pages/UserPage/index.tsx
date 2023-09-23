@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 import { useMode } from '../../contexts/ModeContext';
 import { ReactComponent as NotYetLight } from '../../assets/icons/character/not_yet_light.svg';
@@ -7,24 +6,10 @@ import { ReactComponent as NotYetDark } from '../../assets/icons/character/not_y
 import MainGlobalNavBar from '../../components/MainGlobalNavBar';
 import FootNavBar from '../../components/FootNavBar';
 import Text from '../../components/Text';
-import * as S from './ErrorPage.styled';
+import * as S from './UserPage.styled';
 
-const ErrorPage = () => {
+const UserPage = () => {
   const mode = useMode();
-  const navigate = useNavigate();
-  const initialCountdown = 3;
-  const [countdown, setCountdown] = useState(initialCountdown);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCountdown(countdown - 1);
-    }, 1000);
-    return () => {
-      clearTimeout(timer);
-      if (countdown === 1) navigate('/');
-    };
-  }, [countdown]);
-
   return (
     <S.Container>
       <S.Header>
@@ -32,11 +17,8 @@ const ErrorPage = () => {
       </S.Header>
       <S.Main>
         {mode === 'light' ? <NotYetLight /> : <NotYetDark />}
-        <Text size="medium" color="gray">
-          잘못된 접근이에요!
-        </Text>
         <Text size="small" color="gray">
-          {countdown}초 후에 홈으로 이동합니다.
+          아직 저장한 조합이 없어요
         </Text>
       </S.Main>
       <S.Footer>
@@ -46,4 +28,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default UserPage;

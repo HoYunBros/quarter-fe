@@ -6,6 +6,7 @@ import AuthPage from '../pages/AuthPage';
 import SizePickPage from '../pages/SizePickPage';
 import IngredientSelectPage from '../pages/IngredientSelectPage';
 import ResultRecommendPage from '../pages/ResultRecommendPage';
+import UserPage from '../pages/UserPage';
 import ErrorPage from '../pages/ErrorPage';
 
 export const routes = {
@@ -14,6 +15,7 @@ export const routes = {
   sizePick: '/sizePick',
   ingredientSelect: '/ingredientSelect',
   resultRecommend: '/resultRecommend',
+  user: '/user',
 };
 
 const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: `${routes.resultRecommend}/:id`,
     element: <ResultRecommendPage />,
+  },
+  {
+    path: routes.user,
+    element: <UserPage />,
   },
   {
     path: '*',

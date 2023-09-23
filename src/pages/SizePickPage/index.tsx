@@ -19,6 +19,7 @@ const SizePickPage = () => {
   };
   const navigate = useNavigate();
   const { data, isLoading } = useGetSizes();
+
   return (
     <>
       {isLoading && <div>Loading...</div>}

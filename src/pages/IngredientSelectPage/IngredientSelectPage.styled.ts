@@ -28,6 +28,11 @@ export const Main = styled.main`
 export const Footer = styled.footer`
   width: 100%;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
   padding: 0 16px 32px 16px;
 `;
 
