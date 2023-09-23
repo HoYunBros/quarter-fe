@@ -38,6 +38,7 @@ const router = createBrowserRouter([
   {
     path: `${routes.resultRecommend}/:id`,
     element: <ResultRecommendPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: routes.user,
