@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useMode } from '../../contexts/ModeContext';
 import { ReactComponent as HomeClicked } from '../../assets/icons/common/home_clicked.svg';
@@ -13,7 +13,6 @@ import * as S from './FootNavBar.styled';
 
 const FootNavBar = () => {
   const mode = useMode();
-  // TODO: 각 아이콘 클릭 상태에 따라 색상 변경 및 페이지 이동
   const { pathname } = useLocation();
   const isHomePage = pathname === '/';
   const isUserPage = pathname === '/user';
@@ -27,13 +26,22 @@ const FootNavBar = () => {
     : mode === 'light'
     ? UserNonClickedLight
     : UserNonClickedDark;
+  const navigate = useNavigate();
   return (
     <S.Nav>
-      <S.NavItemWrapper>
+      <S.NavItemWrapper
+        onClick={() => {
+          navigate('/');
+        }}
+      >
         <Home />
         <S.NavItemTitle $isClicked={isHomePage}>홈</S.NavItemTitle>
       </S.NavItemWrapper>
-      <S.NavItemWrapper>
+      <S.NavItemWrapper
+        onClick={() => {
+          navigate('/user');
+        }}
+      >
         <User />
         <S.NavItemTitle $isClicked={isUserPage}>마이</S.NavItemTitle>
       </S.NavItemWrapper>

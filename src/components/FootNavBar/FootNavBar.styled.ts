@@ -6,9 +6,10 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 8px;
+  padding: 8px 16px 32px 16px;
   gap: 8px;
-  background-color: ${({ theme }) => theme.colors.gray_01};
+  border-top: 1px solid ${({ theme }) => theme.colors.gray_01};
+  background-color: ${({ theme }) => theme.colors.gray_00};
 `;
 
 export const NavItemWrapper = styled.button`
