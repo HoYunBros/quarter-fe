@@ -18,18 +18,23 @@ export const SlideContainer = styled.section<{ $currentSlideIndex: number }>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: translateX(${({ $currentSlideIndex }) => $currentSlideIndex * -340}px);
 `;
 
-export const SlideWrapper = styled.div`
+export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
   width: 100%;
   height: 100%;
-
+  padding: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '30px')};
+  transition: padding 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   & > img {
     width: 340px;
     height: 100%;
     padding: 0 6px;
+
     border-radius: 32px;
   }
 `;

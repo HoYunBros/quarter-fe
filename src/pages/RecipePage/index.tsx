@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { routes } from '../../router';
 import MainGlobalNavBar from '../../components/MainGlobalNavBar';
@@ -16,15 +16,19 @@ const imgUrls = [
 ];
 
 const RecipePage = () => {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const changeSlide = (index: number) => {
+    setCurrentSlideIndex(index);
+  };
   return (
     <S.Container>
       <S.Header>
         <MainGlobalNavBar />
       </S.Header>
       <S.Main>
-        <Carousel>
+        <Carousel currentSlideIndex={currentSlideIndex} changeSlide={changeSlide}>
           {imgUrls?.map((url, index) => (
-            <Carousel.Slide key={index}>
+            <Carousel.Slide key={index} isCurrentSlide={index === currentSlideIndex}>
               <img src={url} alt={`carousel-${index}`} />
             </Carousel.Slide>
           ))}
