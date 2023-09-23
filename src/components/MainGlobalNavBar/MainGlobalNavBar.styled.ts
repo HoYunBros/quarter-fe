@@ -19,8 +19,8 @@ export const LogoContainer = styled.section`
 export const ModeContainer = styled.section`
   display: flex;
   align-items: center;
-  padding: 4px;
-  gap: 6px;
+  padding: 3px;
+  gap: 2px;
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.gray_02};
   /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); */
@@ -32,7 +32,6 @@ export const ModeButton = styled.button<{ $isActive: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
   border-radius: 50%;
   background-color: ${({ theme, $isActive }) =>
     $isActive ? theme.colors.white : theme.colors.gray_02};
