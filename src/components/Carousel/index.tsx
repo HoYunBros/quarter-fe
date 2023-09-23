@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
 
 import { isMobile } from '../../utils/isMobile';
@@ -21,6 +21,20 @@ const Carousel = ({ children }: CarouselProps) => {
   const handleSlideClick = (index: number) => {
     setCurrentSlideIndex(index);
   };
+  // 3초마다 슬라이드 넘기기
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (currentSlideIndex >= React.Children.count(children) - 1) {
+        setCurrentSlideIndex(0);
+        return;
+      }
+      setCurrentSlideIndex(currentSlideIndex + 1);
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [currentSlideIndex, children]);
+
   const theme = useTheme();
   return (
     <S.CarouselContainer>

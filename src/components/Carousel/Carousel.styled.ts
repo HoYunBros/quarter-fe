@@ -18,7 +18,7 @@ export const SlideContainer = styled.section<{ $currentSlideIndex: number }>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   transform: translateX(${({ $currentSlideIndex }) => $currentSlideIndex * -340}px);
 `;
 
