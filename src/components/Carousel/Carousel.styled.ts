@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CarouselContainer = styled.section`
   width: 390px;
-  height: 460px;
+  height: 480px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -24,17 +24,21 @@ export const SlideContainer = styled.section<{ $currentSlideIndex: number }>`
 
 export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
   width: 100%;
-  height: 100%;
-  padding: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '30px')};
+  height: 460px;
   transition: padding 0.3s ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
   & > img {
-    width: 340px;
-    height: 100%;
-    padding: 0 6px;
+    width: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '340px' : '320px')};
+    margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
+    border-radius: 32px;
+  }
 
+  & > div {
+    width: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '340px' : '320px')};
+    height: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '460px' : '440px')};
+    margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
     border-radius: 32px;
   }
 `;

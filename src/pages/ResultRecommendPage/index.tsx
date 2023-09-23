@@ -19,7 +19,6 @@ const ResultRecommendPage = () => {
     throw new Error('id가 숫자가 아닙니다.');
   }
   const { data } = useGetRecipe(idNumber);
-  console.log('💡 data: ', data);
   const initUserItem = useInitUserItem();
 
   return (
@@ -34,7 +33,7 @@ const ResultRecommendPage = () => {
           </S.Header>
           <S.Main>
             <Text size="large">나만의 꿀조합을 찾았어요!</Text>
-            <RecipeCard {...data.recipe} />
+            <RecipeCard {...data.recipe} hasBookmark={true} />
           </S.Main>
           <S.Footer>
             <FootButton

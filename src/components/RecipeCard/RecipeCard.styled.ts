@@ -48,10 +48,11 @@ export const Image = styled.img`
   margin: 0;
 `;
 
-export const UpperWrapper = styled.div`
+export const UpperWrapper = styled.div<{ $hasPaddingTop: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-top: ${({ $hasPaddingTop }) => ($hasPaddingTop ? '68px' : '0')};
   align-items: center;
   width: fit-content;
   height: fit-content;
