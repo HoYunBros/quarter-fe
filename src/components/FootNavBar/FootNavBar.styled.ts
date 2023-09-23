@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 8px;
   gap: 8px;
-  background-color: ${({ theme }) => theme.colors.gray_00};
+  background-color: ${({ theme }) => theme.colors.gray_01};
 `;
 
 export const NavItemWrapper = styled.button`
