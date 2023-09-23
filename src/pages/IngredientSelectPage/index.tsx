@@ -29,7 +29,6 @@ const IngredientSelectPage = () => {
     (item, index) => allFlavorIdList.indexOf(item) === index,
   );
   const isAbleToRecommend = flavorIdList.length >= size.value;
-  console.log(flavorIdList);
   const navigate = useNavigate();
   if (size.id === -1) {
     navigate(routes.sizePick);
@@ -76,9 +75,6 @@ const IngredientSelectPage = () => {
                   sizeId: size.id,
                   ingredientIds,
                 });
-                // if (mutation.isSuccess) {
-                //   navigate(`${routes.resultRecommend}`);
-                // }
               }}
               disabled={!isAbleToRecommend}
             >

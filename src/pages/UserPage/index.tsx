@@ -10,6 +10,7 @@ import * as S from './UserPage.styled';
 
 const UserPage = () => {
   const mode = useMode();
+
   return (
     <S.Container>
       <S.Header>

@@ -7,7 +7,7 @@ type Flavor = {
   imageUrl: string;
 };
 
-type Recipe = {
+export type Recipe = {
   id: number;
   recipeName: string;
   flavors: Flavor[];

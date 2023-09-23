@@ -7,31 +7,49 @@ import FootButton from '../../components/FootButton';
 import Text from '../../components/Text';
 import { PROGRESS_BAR_WIDTH } from '../../constants';
 import * as S from './ResultRecommendPage.styled';
+import { useGetRecipe } from '../../services/useGetRecipe';
+import RecipeCard from '../../components/RecipeCard';
+import { useInitUserItem } from '../../contexts/UserItemContext';
 
 const ResultRecommendPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  // TODO: id로 Get 요청 보내서 결과 렌더링하기
-  console.log(id);
+  const idNumber = +(id as string);
+  if (isNaN(idNumber)) {
+    throw new Error('id가 숫자가 아닙니다.');
+  }
+  const { data } = useGetRecipe(idNumber);
+  console.log('💡 data: ', data);
+  const initUserItem = useInitUserItem();
 
   return (
-    <S.Container>
-      <S.Header>
-        <SubGlobalNavBar backTo={routes.ingredientSelect} progressWidth={PROGRESS_BAR_WIDTH.END} />
-      </S.Header>
-      <S.Main>
-        <Text size="large">나만의 꿀조합을 찾았어요!</Text>
-      </S.Main>
-      <S.Footer>
-        <FootButton
-          onClick={() => {
-            navigate(routes.sizePick);
-          }}
-        >
-          다시하기
-        </FootButton>
-      </S.Footer>
-    </S.Container>
+    <>
+      {data && (
+        <S.Container>
+          <S.Header>
+            <SubGlobalNavBar
+              backTo={routes.ingredientSelect}
+              progressWidth={PROGRESS_BAR_WIDTH.END}
+            />
+          </S.Header>
+          <S.Main>
+            <Text size="large">나만의 꿀조합을 찾았어요!</Text>
+            <RecipeCard {...data.recipe} />
+          </S.Main>
+          <S.Footer>
+            <FootButton
+              onClick={() => {
+                initUserItem();
+                navigate(routes.sizePick);
+              }}
+              disabled={false}
+            >
+              다시하기
+            </FootButton>
+          </S.Footer>
+        </S.Container>
+      )}
+    </>
   );
 };
 
