@@ -35,6 +35,7 @@ export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
     border-radius: 24px;
     box-shadow: ${({ theme }) => theme.colors.shadow};
+    cursor: pointer;
   }
 
   & > div {
@@ -43,6 +44,7 @@ export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
     border-radius: 24px;
     box-shadow: ${({ theme }) => theme.colors.shadow};
+    cursor: pointer;
   }
 `;
 

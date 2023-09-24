@@ -31,7 +31,7 @@ const Carousel = ({ children, currentSlideIndex, changeSlide }: CarouselProps) =
         return;
       }
       changeSlide(currentSlideIndex + 1);
-    }, 3000);
+    }, 4000);
     return () => {
       clearInterval(timer);
     };
