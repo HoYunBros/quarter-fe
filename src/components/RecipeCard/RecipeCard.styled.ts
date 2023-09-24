@@ -19,7 +19,8 @@ export const BookmarkWrapper = styled.div`
   width: 100%;
   height: 60px;
   justify-content: flex-end;
-  padding: 16px;
+  align-items: center;
+  padding: 16px 0;
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -27,13 +28,25 @@ export const DescriptionWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  gap: 4px;
 `;
 
 export const ImageWrapper = styled.div<{ $flavorsCount: number }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${({ $flavorsCount }) => ($flavorsCount === 3 || $flavorsCount === 4 ? 200 : 290)}px;
+  width: ${({ $flavorsCount }) => {
+    switch ($flavorsCount) {
+      case 2:
+        return '160px';
+      case 3:
+        return '200px';
+      case 4:
+        return '200px';
+      default:
+        return '290px';
+    }
+  }};
   height: 180px;
   flex-wrap: wrap;
   gap: 8px;
@@ -55,7 +68,7 @@ export const UpperWrapper = styled.div<{ $hasPaddingTop: boolean }>`
   justify-content: flex-start;
   padding-top: ${({ $hasPaddingTop }) => ($hasPaddingTop ? '68px' : '0')};
   align-items: center;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 `;
 

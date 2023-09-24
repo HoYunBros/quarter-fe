@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 16px 12px;
   background-color: ${({ theme }) => theme.colors.gray_00};
 `;
 
