@@ -6,11 +6,11 @@ import SubGlobalNavBar from '../../components/SubGlobalNavBar';
 import FootButton from '../../components/FootButton';
 import Text from '../../components/Text';
 import { PROGRESS_BAR_WIDTH } from '../../constants';
-import * as S from './IngredientSelectPage.styled';
-
 import { useGetIngredients } from '../../services/useGetIngredients';
 import { usePostRecipe } from '../../services/usePostRecipe';
 import { useUserItem, useChangeIngredientIds } from '../../contexts/UserItemContext';
+import LoadingPage from '../LoadingPage';
+import * as S from './IngredientSelectPage.styled';
 
 const IngredientSelectPage = () => {
   const { data, isLoading } = useGetIngredients();
@@ -35,7 +35,7 @@ const IngredientSelectPage = () => {
   }
   return (
     <>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingPage />}
       {data && (
         <S.Container>
           <S.UpperContainer>

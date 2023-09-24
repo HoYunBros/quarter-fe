@@ -8,16 +8,18 @@ import * as S from './RecipePage.styled';
 import Carousel from '../../components/Carousel';
 import { useGetRecommendations } from '../../services/useGetRecommendations';
 import RecipeCard from '../../components/RecipeCard';
+import LoadingPage from '../LoadingPage';
 
 const RecipePage = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const changeSlide = (index: number) => {
     setCurrentSlideIndex(index);
   };
-  const { data } = useGetRecommendations();
+  const { data, isLoading } = useGetRecommendations();
   const [clickedCardIndexList, setClickedCardIndexList] = useState<number[]>([]);
   return (
     <>
+      {isLoading && <LoadingPage />}
       {data && (
         <S.Container>
           <S.UpperContainer>

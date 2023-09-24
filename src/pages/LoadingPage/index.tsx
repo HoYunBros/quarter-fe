@@ -1,10 +1,15 @@
 import React from 'react';
 
+import Text from '../../components/Text';
+import * as S from './LoadingPage.styled';
+
 const LoadingPage = () => {
   return (
-    <section>
-      <h1>Loading Page</h1>
-    </section>
+    <S.Container>
+      <Text size="large" color="black">
+        로딩 중...
+      </Text>
+    </S.Container>
   );
 };
 
