@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const CarouselContainer = styled.section`
   width: 390px;
-  height: 480px;
+  height: 484px;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 0 25px;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const SlideContainer = styled.section<{ $currentSlideIndex: number }>`
@@ -29,10 +29,12 @@ export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
+
   & > img {
     width: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '340px' : '320px')};
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
     border-radius: 32px;
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
   }
 
   & > div {
@@ -40,6 +42,7 @@ export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
     height: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '460px' : '440px')};
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
     border-radius: 32px;
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
   }
 `;
 
@@ -50,8 +53,8 @@ export const ArrowLeftButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 35px;
-  bottom: 200px;
+  left: 30px;
+  bottom: 230px;
   background-color: transparent;
   border-radius: 50%;
   z-index: 9999;
@@ -64,8 +67,8 @@ export const ArrowRightButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 35px;
-  bottom: 200px;
+  right: 30px;
+  bottom: 230px;
   background-color: transparent;
   border-radius: 50%;
   z-index: 9999;
