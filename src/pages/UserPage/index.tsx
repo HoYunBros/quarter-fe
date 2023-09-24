@@ -3,7 +3,6 @@ import React from 'react';
 import { useMode } from '../../contexts/ModeContext';
 import { ReactComponent as NotYetLight } from '../../assets/icons/character/not_yet_light.svg';
 import { ReactComponent as NotYetDark } from '../../assets/icons/character/not_yet_dark.svg';
-import MainGlobalNavBar from '../../components/MainGlobalNavBar';
 import FootNavBar from '../../components/FootNavBar';
 import Text from '../../components/Text';
 import * as S from './UserPage.styled';
@@ -14,7 +13,9 @@ const UserPage = () => {
   return (
     <S.Container>
       <S.Header>
-        <MainGlobalNavBar />
+        <Text size="large" color="black">
+          마이
+        </Text>
       </S.Header>
       <S.Main>
         {mode === 'light' ? <NotYetLight /> : <NotYetDark />}

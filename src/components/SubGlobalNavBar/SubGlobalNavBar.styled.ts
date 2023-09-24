@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 16px;
+  padding: 16px 12px;
   background-color: ${({ theme }) => theme.colors.gray_00};
 `;
 

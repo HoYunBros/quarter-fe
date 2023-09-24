@@ -12,6 +12,9 @@ export const Container = styled.section`
 export const Header = styled.header`
   width: 100%;
   height: fit-content;
+  position: relative;
+  top: 0;
+  padding: 16px 12px;
 `;
 
 export const Main = styled.main`

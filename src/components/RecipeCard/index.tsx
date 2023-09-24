@@ -16,7 +16,11 @@ type Props = {
 
 const RecipeCard = ({ recipeName, flavors, onClick = () => {}, hasBookmark }: Props) => {
   const theme = useTheme();
-
+  const recipeNameSplitLength = recipeName.split(' ').length;
+  const flavorsLength = flavors.length;
+  const flavorsFirstRow = flavors.slice(0, 2);
+  const flavorsSecondRow = flavors.slice(2, 4);
+  const flavorsThirdRow = flavors.slice(4, 6);
   return (
     <S.CardWrapper
       onClick={() => {
@@ -36,9 +40,22 @@ const RecipeCard = ({ recipeName, flavors, onClick = () => {}, hasBookmark }: Pr
           </S.BookmarkWrapper>
         )}
         <S.TextWrapper>
-          <Text size="large">{recipeName}</Text>
+          <Text size="large" align="center">
+            {recipeName.split(' ').slice(0, 2).join(' ')}
+          </Text>
+          <Text size="large" align="center">
+            {recipeName.split(' ').slice(2, recipeNameSplitLength).join(' ')}
+          </Text>
           <S.DescriptionWrapper>
-            <Text size="small">{flavors?.map(flavor => flavor.flavorName).join(' + ')}</Text>
+            <Text size="small">
+              {flavorsFirstRow.map(flavor => flavor.flavorName).join('+')}
+              {flavorsLength >= 3 && '+'}
+            </Text>
+            <Text size="small">
+              {flavorsSecondRow.map(flavor => flavor.flavorName).join('+')}
+              {flavorsLength >= 5 && '+'}
+            </Text>
+            <Text size="small">{flavorsThirdRow.map(flavor => flavor.flavorName).join('+')}</Text>
           </S.DescriptionWrapper>
         </S.TextWrapper>
       </S.UpperWrapper>
