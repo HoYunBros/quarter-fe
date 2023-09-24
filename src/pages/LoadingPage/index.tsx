@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Text from '../../components/Text';
+import loadingGif from '../../assets/icons/loading/loading.gif';
 import * as S from './LoadingPage.styled';
 
 const LoadingPage = () => {
   return (
     <S.Container>
-      <Text size="large" color="black">
-        로딩 중...
-      </Text>
+      <img src={loadingGif} alt="loading..." />
     </S.Container>
   );
 };
