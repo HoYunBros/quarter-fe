@@ -33,16 +33,16 @@ export const SlideWrapper = styled.div<{ $isCurrentSlide?: boolean }>`
   & > img {
     width: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '340px' : '320px')};
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
-    border-radius: 32px;
-    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 24px;
+    box-shadow: ${({ theme }) => theme.colors.shadow};
   }
 
   & > div {
     width: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '340px' : '320px')};
     height: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '460px' : '440px')};
     margin: ${({ $isCurrentSlide }) => ($isCurrentSlide ? '0' : '0 10px')};
-    border-radius: 32px;
-    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 24px;
+    box-shadow: ${({ theme }) => theme.colors.shadow};
   }
 `;
 

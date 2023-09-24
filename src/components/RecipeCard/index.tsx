@@ -48,14 +48,14 @@ const RecipeCard = ({ recipeName, flavors, onClick = () => {}, hasBookmark }: Pr
           </Text>
           <S.DescriptionWrapper>
             <Text size="small">
-              {flavorsFirstRow.map(flavor => flavor.flavorName).join('+')}
-              {flavorsLength >= 3 && '+'}
+              {flavorsFirstRow.map(flavor => flavor.flavorName).join(' + ')}
+              {flavorsLength >= 3 && ' + '}
             </Text>
             <Text size="small">
-              {flavorsSecondRow.map(flavor => flavor.flavorName).join('+')}
-              {flavorsLength >= 5 && '+'}
+              {flavorsSecondRow.map(flavor => flavor.flavorName).join(' + ')}
+              {flavorsLength >= 5 && ' + '}
             </Text>
-            <Text size="small">{flavorsThirdRow.map(flavor => flavor.flavorName).join('+')}</Text>
+            <Text size="small">{flavorsThirdRow.map(flavor => flavor.flavorName).join(' + ')}</Text>
           </S.DescriptionWrapper>
         </S.TextWrapper>
       </S.UpperWrapper>
