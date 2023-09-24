@@ -7,9 +7,9 @@ import Text from '../../components/Text';
 import FootButton from '../../components/FootButton';
 import { PROGRESS_BAR_WIDTH } from '../../constants';
 import { useUserItem, useChangeSize } from '../../contexts/UserItemContext';
-import * as S from './SizePickPage.styled';
-
 import { useGetSizes } from '../../services/useGetSizes';
+import LoadingPage from '../LoadingPage';
+import * as S from './SizePickPage.styled';
 
 const SizePickPage = () => {
   const { size } = useUserItem();
@@ -22,7 +22,7 @@ const SizePickPage = () => {
 
   return (
     <>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <LoadingPage />}
       {data && (
         <S.Container>
           <S.UpperContainer>

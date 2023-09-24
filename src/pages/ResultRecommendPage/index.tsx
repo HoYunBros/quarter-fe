@@ -6,10 +6,11 @@ import SubGlobalNavBar from '../../components/SubGlobalNavBar';
 import FootButton from '../../components/FootButton';
 import Text from '../../components/Text';
 import { PROGRESS_BAR_WIDTH } from '../../constants';
-import * as S from './ResultRecommendPage.styled';
 import { useGetRecipe } from '../../services/useGetRecipe';
 import RecipeCard from '../../components/RecipeCard';
 import { useInitUserItem } from '../../contexts/UserItemContext';
+import LoadingPage from '../LoadingPage';
+import * as S from './ResultRecommendPage.styled';
 
 const ResultRecommendPage = () => {
   const navigate = useNavigate();
@@ -18,11 +19,12 @@ const ResultRecommendPage = () => {
   if (isNaN(idNumber)) {
     throw new Error('id가 숫자가 아닙니다.');
   }
-  const { data } = useGetRecipe(idNumber);
+  const { data, isLoading } = useGetRecipe(idNumber);
   const initUserItem = useInitUserItem();
 
   return (
     <>
+      {isLoading && <LoadingPage />}
       {data && (
         <S.Container>
           <S.UpperContainer>
