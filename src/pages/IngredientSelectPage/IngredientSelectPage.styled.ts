@@ -86,3 +86,13 @@ export const UpperContainer = styled.section`
   align-items: center;
   gap: 34px;
 `;
+
+export const BottomContainer = styled.section`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+`;

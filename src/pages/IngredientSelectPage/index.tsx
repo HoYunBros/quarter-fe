@@ -68,20 +68,22 @@ const IngredientSelectPage = () => {
             </S.Main>
           </S.UpperContainer>
           <S.Footer>
-            {isAbleToRecommend || ingredientIds.length === 0 || (
-              <Text size="small">재료를 조금 더 골라볼까요?</Text>
-            )}
-            <FootButton
-              onClick={() => {
-                mutation.mutate({
-                  sizeId: size.id,
-                  ingredientIds,
-                });
-              }}
-              disabled={!isAbleToRecommend}
-            >
-              결과보기
-            </FootButton>
+            <S.BottomContainer>
+              {isAbleToRecommend || ingredientIds.length === 0 || (
+                <Text size="small">재료를 조금 더 골라볼까요?</Text>
+              )}
+              <FootButton
+                onClick={() => {
+                  mutation.mutate({
+                    sizeId: size.id,
+                    ingredientIds,
+                  });
+                }}
+                disabled={!isAbleToRecommend}
+              >
+                결과보기
+              </FootButton>
+            </S.BottomContainer>
           </S.Footer>
         </S.Container>
       )}
