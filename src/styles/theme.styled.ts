@@ -9,6 +9,8 @@ const lightColors = {
   gray_03: '#666666',
   gray_04: '#666666',
   gray_05: '#292F3F',
+  shadow: '0px 0px 16px 0px rgba(218, 226, 231, 0.3), 0px 24px 24px 0px rgba(181, 190, 197, 0.3)',
+  card: '#FFFFFF',
 };
 
 const darkColors = {
@@ -22,6 +24,8 @@ const darkColors = {
   gray_03: '#9096A9',
   gray_04: '#EEEEEE',
   gray_05: '#FFFFFF',
+  shadow: '0px 0px 16px 0px rgba(0, 0, 0, 0.20), 0px 24px 24px 0px rgba(0, 0, 0, 0.20)',
+  card: '#3B4359',
 };
 
 const fontSizes = {

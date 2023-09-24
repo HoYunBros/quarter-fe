@@ -9,9 +9,9 @@ export const CardWrapper = styled.div`
   height: 460px;
   padding: 0 20px;
   border-radius: 24px;
-  background-color: ${({ theme }) => theme.colors.gray_00};
+  background-color: ${({ theme }) => theme.colors.card};
   overflow: hidden;
-  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: ${({ theme }) => theme.colors.shadow};
 `;
 
 export const BookmarkWrapper = styled.div`
