@@ -35,10 +35,12 @@ const RecipeCard = ({ recipeName, flavors, onClick = () => {}, hasBookmark }: Pr
             />
           </S.BookmarkWrapper>
         )}
-        <Text size="large">{recipeName}</Text>
-        <S.DescriptionWrapper>
-          <Text size="small">{flavors?.map(flavor => flavor.flavorName).join(' + ')}</Text>
-        </S.DescriptionWrapper>
+        <S.TextWrapper>
+          <Text size="large">{recipeName}</Text>
+          <S.DescriptionWrapper>
+            <Text size="small">{flavors?.map(flavor => flavor.flavorName).join(' + ')}</Text>
+          </S.DescriptionWrapper>
+        </S.TextWrapper>
       </S.UpperWrapper>
       <S.ImageWrapper $flavorsCount={flavors.length}>
         {flavors?.map((flavor, index) => <S.Image key={index} src={flavor.imageUrl} />)}

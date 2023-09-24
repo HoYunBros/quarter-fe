@@ -13,18 +13,18 @@ export const Container = styled.section`
 export const Header = styled.header`
   width: 100%;
   height: fit-content;
+  position: relative;
+  top: 0;
 `;
 
 export const Main = styled.main`
   width: 100%;
   height: fit-content;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 16px 16vh 16px;
-
-  gap: 24px;
 `;
 
 export const LinkButton = styled(Link)`
@@ -44,15 +44,19 @@ export const LinkButton = styled(Link)`
 export const Footer = styled.footer`
   width: 100%;
   height: fit-content;
+  position: relative;
+  bottom: 0;
 `;
 
-export const CarouselContainer = styled.section`
-  width: 400px;
-  height: 600px;
+export const UpperContainer = styled.section`
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  top: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  flex-wrap: initial;
   align-items: center;
-  overflow: hidden;
+  gap: 16px;
 `;

@@ -23,7 +23,6 @@ export const ModeContainer = styled.section`
   gap: 2px;
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.gray_02};
-  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); */
 `;
 
 export const ModeButton = styled.button<{ $isActive: boolean }>`

@@ -25,16 +25,20 @@ const ResultRecommendPage = () => {
     <>
       {data && (
         <S.Container>
-          <S.Header>
-            <SubGlobalNavBar
-              backTo={routes.ingredientSelect}
-              progressWidth={PROGRESS_BAR_WIDTH.END}
-            />
-          </S.Header>
-          <S.Main>
-            <Text size="large">나만의 꿀조합을 찾았어요!</Text>
-            <RecipeCard {...data.recipe} hasBookmark={true} />
-          </S.Main>
+          <S.UpperContainer>
+            <S.Header>
+              <SubGlobalNavBar
+                backTo={routes.ingredientSelect}
+                progressWidth={PROGRESS_BAR_WIDTH.END}
+              />
+            </S.Header>
+            <S.Main>
+              <S.TextWrapper>
+                <Text size="large">나만의 꿀조합을 찾았어요!</Text>
+              </S.TextWrapper>
+              <RecipeCard {...data.recipe} hasBookmark={true} />
+            </S.Main>
+          </S.UpperContainer>
           <S.Footer>
             <FootButton
               onClick={() => {

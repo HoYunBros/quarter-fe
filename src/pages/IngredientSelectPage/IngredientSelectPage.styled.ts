@@ -21,19 +21,18 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 32px 20px;
+  position: relative;
+  top: 0;
+  padding: 0 20px;
   gap: 24px;
 `;
 
 export const Footer = styled.footer`
   width: 100%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  padding: 0 16px 32px 16px;
+  position: relative;
+  bottom: 0;
+  padding: 12px 16px 32px 16px;
 `;
 
 export const IngredientsContainer = styled.section`
@@ -43,8 +42,8 @@ export const IngredientsContainer = styled.section`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-
-  gap: 10px;
+  row-gap: 24px;
+  column-gap: 10px;
 `;
 
 export const IngredientWrapper = styled.button`
@@ -73,4 +72,17 @@ export const IngredientName = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: ${({ theme }) => theme.fontWeights.normal};
   color: ${({ theme }) => theme.colors.gray_05};
+`;
+
+export const UpperContainer = styled.section`
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 34px;
 `;

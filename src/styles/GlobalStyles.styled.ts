@@ -8,12 +8,14 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     }
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
   a {
     text-decoration: none;
     color: inherit;
   }
   button {
-    /* 버튼 크기 초기화 */
     padding: 0;
     margin: 0;
     border: none;

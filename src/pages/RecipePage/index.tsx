@@ -20,40 +20,42 @@ const RecipePage = () => {
     <>
       {data && (
         <S.Container>
-          <S.Header>
-            <MainGlobalNavBar />
-          </S.Header>
-          <S.Main>
-            <Carousel currentSlideIndex={currentSlideIndex} changeSlide={changeSlide}>
-              {data?.recommendations?.map((recommendation, index) => {
-                return clickedCardIndexList.includes(index) ? (
-                  <Carousel.Slide key={index} isCurrentSlide={index === currentSlideIndex}>
-                    <RecipeCard
-                      {...recommendation.recipe}
-                      onClick={() => {
-                        setClickedCardIndexList(
-                          clickedCardIndexList.filter(
-                            clickedCardIndex => clickedCardIndex !== index,
-                          ),
-                        );
-                      }}
-                    />
-                  </Carousel.Slide>
-                ) : (
-                  <Carousel.Slide key={index} isCurrentSlide={index === currentSlideIndex}>
-                    <img
-                      src={recommendation.cover.imageUrl}
-                      alt={`carousel-${index}`}
-                      onClick={() => {
-                        setClickedCardIndexList([...clickedCardIndexList, index]);
-                      }}
-                    />
-                  </Carousel.Slide>
-                );
-              })}
-            </Carousel>
-            <S.LinkButton to={routes.sizePick}>꿀조합 찾기</S.LinkButton>
-          </S.Main>
+          <S.UpperContainer>
+            <S.Header>
+              <MainGlobalNavBar />
+            </S.Header>
+            <S.Main>
+              <Carousel currentSlideIndex={currentSlideIndex} changeSlide={changeSlide}>
+                {data?.recommendations?.map((recommendation, index) => {
+                  return clickedCardIndexList.includes(index) ? (
+                    <Carousel.Slide key={index} isCurrentSlide={index === currentSlideIndex}>
+                      <RecipeCard
+                        {...recommendation.recipe}
+                        onClick={() => {
+                          setClickedCardIndexList(
+                            clickedCardIndexList.filter(
+                              clickedCardIndex => clickedCardIndex !== index,
+                            ),
+                          );
+                        }}
+                      />
+                    </Carousel.Slide>
+                  ) : (
+                    <Carousel.Slide key={index} isCurrentSlide={index === currentSlideIndex}>
+                      <img
+                        src={recommendation.cover.imageUrl}
+                        alt={`carousel-${index}`}
+                        onClick={() => {
+                          setClickedCardIndexList([...clickedCardIndexList, index]);
+                        }}
+                      />
+                    </Carousel.Slide>
+                  );
+                })}
+              </Carousel>
+              <S.LinkButton to={routes.sizePick}>꿀조합 찾기</S.LinkButton>
+            </S.Main>
+          </S.UpperContainer>
           <S.Footer>
             <FootNavBar />
           </S.Footer>
