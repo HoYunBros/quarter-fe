@@ -42,7 +42,8 @@
     "format": "prettier --cache --write .",
     "lint": "eslint --cache .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_263f412f6df2283"
   },
   "lint-staged": {
     "*.tsx": [
