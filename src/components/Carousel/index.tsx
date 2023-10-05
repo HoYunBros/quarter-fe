@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components';
 import { isMobile } from '../../utils/isMobile';
 import { ReactComponent as ButtonLeft } from '../../assets/icons/common/chevron_left.svg';
 import { ReactComponent as ButtonRight } from '../../assets/icons/common/chevron_right.svg';
+import { CAROUSEL_SLIDE_AUTOPLAY_INTERVAL } from '../../constants';
 import * as S from './Carousel.styled';
 
 type CarouselProps = {
@@ -31,7 +32,7 @@ const Carousel = ({ children, currentSlideIndex, changeSlide }: CarouselProps) =
         return;
       }
       changeSlide(currentSlideIndex + 1);
-    }, 4000);
+    }, CAROUSEL_SLIDE_AUTOPLAY_INTERVAL);
     return () => {
       clearInterval(timer);
     };
